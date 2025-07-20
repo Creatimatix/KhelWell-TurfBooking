@@ -24,6 +24,7 @@ import {
 } from '@mui/icons-material';
 import NotificationBell from './NotificationBell';
 import Logo from './Logo';
+import { AnimatedBox } from './VisualEffects';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
@@ -81,21 +82,45 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           <Button
             color="inherit"
             onClick={() => navigate('/turfs')}
-            sx={{ mr: 2 }}
+            sx={{ 
+              mr: 2,
+              transition: 'all 0.3s ease',
+              '&:hover': {
+                background: 'rgba(255,255,255,0.1)',
+                transform: 'translateY(-2px)',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+              }
+            }}
           >
             Turfs
           </Button>
           <Button
             color="inherit"
             onClick={() => navigate('/events')}
-            sx={{ mr: 2 }}
+            sx={{ 
+              mr: 2,
+              transition: 'all 0.3s ease',
+              '&:hover': {
+                background: 'rgba(255,255,255,0.1)',
+                transform: 'translateY(-2px)',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+              }
+            }}
           >
             Events
           </Button>
           <Button
             color="inherit"
             onClick={() => navigate('/login')}
-            sx={{ mr: 1 }}
+            sx={{ 
+              mr: 1,
+              transition: 'all 0.3s ease',
+              '&:hover': {
+                background: 'rgba(255,255,255,0.1)',
+                transform: 'translateY(-2px)',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+              }
+            }}
           >
             Login
           </Button>
@@ -103,6 +128,17 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             variant="contained"
             color="secondary"
             onClick={() => navigate('/register')}
+            sx={{
+              background: 'rgba(255,255,255,0.2)',
+              backdropFilter: 'blur(10px)',
+              border: '1px solid rgba(255,255,255,0.3)',
+              transition: 'all 0.3s ease',
+              '&:hover': {
+                background: 'rgba(255,255,255,0.3)',
+                transform: 'translateY(-2px)',
+                boxShadow: '0 6px 20px rgba(0,0,0,0.2)'
+              }
+            }}
           >
             Register
           </Button>
@@ -115,21 +151,45 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         <Button
           color="inherit"
           onClick={() => navigate('/turfs')}
-          sx={{ mr: 2 }}
+          sx={{ 
+            mr: 2,
+            transition: 'all 0.3s ease',
+            '&:hover': {
+              background: 'rgba(255,255,255,0.1)',
+              transform: 'translateY(-2px)',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+            }
+          }}
         >
           Turfs
         </Button>
         <Button
           color="inherit"
           onClick={() => navigate('/events')}
-          sx={{ mr: 2 }}
+          sx={{ 
+            mr: 2,
+            transition: 'all 0.3s ease',
+            '&:hover': {
+              background: 'rgba(255,255,255,0.1)',
+              transform: 'translateY(-2px)',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+            }
+          }}
         >
           Events
         </Button>
         <Button
           color="inherit"
           onClick={() => navigate(getDashboardPath())}
-          sx={{ mr: 2 }}
+          sx={{ 
+            mr: 2,
+            transition: 'all 0.3s ease',
+            '&:hover': {
+              background: 'rgba(255,255,255,0.1)',
+              transform: 'translateY(-2px)',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+            }
+          }}
         >
           Dashboard
         </Button>
@@ -142,8 +202,22 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           aria-haspopup="true"
           onClick={handleProfileMenuOpen}
           color="inherit"
+          sx={{
+            transition: 'all 0.3s ease',
+            '&:hover': {
+              transform: 'scale(1.1)',
+              background: 'rgba(255,255,255,0.1)'
+            }
+          }}
         >
-          <Avatar sx={{ width: 32, height: 32 }}>
+          <Avatar sx={{ 
+            width: 32, 
+            height: 32,
+            transition: 'all 0.3s ease',
+            '&:hover': {
+              transform: 'scale(1.1)'
+            }
+          }}>
             {user.name.charAt(0).toUpperCase()}
           </Avatar>
         </IconButton>
@@ -275,18 +349,30 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-      <AppBar position="static">
+      <AppBar 
+        position="static"
+        sx={{
+          background: 'linear-gradient(135deg, #2e7d32 0%, #4caf50 100%)',
+          boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+          backdropFilter: 'blur(10px)',
+          borderBottom: '1px solid rgba(255,255,255,0.1)'
+        }}
+      >
         <Toolbar>
           <Box
             sx={{ 
               flexGrow: 1, 
               cursor: 'pointer',
               display: 'flex',
-              alignItems: 'center'
+              alignItems: 'center',
+              transition: 'transform 0.2s ease-in-out',
+              '&:hover': {
+                transform: 'scale(1.02)'
+              }
             }}
             onClick={() => navigate('/')}
           >
-            <Logo variant="compact" size="medium" />
+            <Logo variant="menu" size="medium" />
           </Box>
 
           {isMobile ? (
@@ -297,6 +383,13 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 color="inherit"
                 aria-label="menu"
                 onClick={handleMobileMenuOpen}
+                sx={{
+                  transition: 'all 0.3s ease',
+                  '&:hover': {
+                    transform: 'rotate(90deg)',
+                    background: 'rgba(255,255,255,0.1)'
+                  }
+                }}
               >
                 <MenuIcon />
               </IconButton>
@@ -312,12 +405,22 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                   vertical: 'top',
                   horizontal: 'right',
                 }}
+                PaperProps={{
+                  sx: {
+                    background: 'rgba(255,255,255,0.95)',
+                    backdropFilter: 'blur(10px)',
+                    border: '1px solid rgba(255,255,255,0.2)',
+                    boxShadow: '0 8px 32px rgba(0,0,0,0.1)'
+                  }
+                }}
               >
                 {renderMobileMenu()}
               </Menu>
             </>
           ) : (
-            renderNavigationItems()
+            <AnimatedBox effect="fadeInUp" delay={0.2}>
+              {renderNavigationItems()}
+            </AnimatedBox>
           )}
 
           <Menu
@@ -331,6 +434,14 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             transformOrigin={{
               vertical: 'top',
               horizontal: 'right',
+            }}
+            PaperProps={{
+              sx: {
+                background: 'rgba(255,255,255,0.95)',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(255,255,255,0.2)',
+                boxShadow: '0 8px 32px rgba(0,0,0,0.1)'
+              }
             }}
           >
             {user && user.role === 'user' && (
@@ -391,10 +502,19 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           py: 3,
           px: 2,
           mt: 'auto',
-          backgroundColor: (theme) =>
-            theme.palette.mode === 'light'
-              ? theme.palette.grey[200]
-              : theme.palette.grey[800],
+          background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)',
+          borderTop: '1px solid rgba(0,0,0,0.1)',
+          position: 'relative',
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'radial-gradient(circle at 20% 80%, rgba(46, 125, 50, 0.05) 0%, transparent 50%)',
+            pointerEvents: 'none'
+          }
         }}
       >
         <Container maxWidth="sm">
