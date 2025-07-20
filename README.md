@@ -1,14 +1,21 @@
-# 🏟️ KhelWell - Sports Turf Booking & Events Platform
+# ⚽ KhelWell - Your Game. Your Journey. All in One Place
 
-A complete web application for booking sports turfs and managing sports events. Built with React, Node.js, MySQL, and Sequelize.
+A comprehensive sports platform for booking turfs, joining events, and connecting with sports enthusiasts. Built with React, Node.js, MySQL, and Sequelize.
+
+## 🎯 About KhelWell
+
+**KhelWell** is more than just a turf booking platform. It's a complete sports ecosystem where players, turf owners, and event organizers come together to create an active sports community.
+
+### Our Mission
+To make sports accessible to everyone by providing a seamless platform for booking turfs, discovering events, and building a vibrant sports community.
 
 ## 🚀 Features
 
-### For Users
+### For Sports Enthusiasts
 - **Turf Booking**: Browse and book sports turfs with real-time availability
 - **Event Discovery**: View and register for sports events and tournaments
 - **Review System**: Rate and review turfs with detailed feedback
-- **Dashboard**: Track bookings, spending, and favorite sports
+- **Personal Dashboard**: Track bookings, spending, and favorite sports
 - **Profile Management**: Update personal information and preferences
 - **OTP Authentication**: Secure login with SMS verification
 

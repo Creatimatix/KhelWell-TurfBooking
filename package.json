@@ -1,7 +1,7 @@
 {
-  "name": "khelwell-webapp",
+  "name": "khelwell",
   "version": "1.0.0",
-  "description": "Complete turf booking and sports events platform",
+  "description": "KhelWell - Your Game. Your Journey. All in One Place. A comprehensive sports turf booking and events platform.",
   "main": "index.js",
   "scripts": {
     "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
@@ -14,14 +14,16 @@
     "seed": "cd backend && node seed-data.js"
   },
   "keywords": [
+    "khelwell",
+    "sports",
     "turf-booking",
-    "sports-events",
+    "events",
+    "community",
     "react",
     "nodejs",
-    "mysql",
-    "sequelize"
+    "mysql"
   ],
-  "author": "KhelWell Team",
+  "author": "Creatimatix",
   "license": "MIT",
   "devDependencies": {
     "concurrently": "^8.2.2"

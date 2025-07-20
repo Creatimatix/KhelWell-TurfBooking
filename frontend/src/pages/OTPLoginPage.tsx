@@ -23,6 +23,7 @@ import {
   ArrowBack as ArrowBackIcon
 } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
+import Logo from '../components/Logo';
 import { useAuth } from '../context/AuthContext';
 
 const OTPLoginPage: React.FC = () => {
@@ -254,11 +255,14 @@ const OTPLoginPage: React.FC = () => {
       <Card>
         <CardContent sx={{ p: 4 }}>
           <Box textAlign="center" mb={3}>
+            <Box sx={{ mb: 3 }}>
+              <Logo variant="default" size="medium" />
+            </Box>
             <Typography variant="h4" gutterBottom>
               OTP Login
             </Typography>
             <Typography variant="body2" color="textSecondary">
-              Login using your phone number and OTP
+              Login to KhelWell using your phone number and OTP
             </Typography>
           </Box>
 

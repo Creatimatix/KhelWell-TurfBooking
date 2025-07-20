@@ -23,6 +23,7 @@ import {
   Logout,
 } from '@mui/icons-material';
 import NotificationBell from './NotificationBell';
+import Logo from './Logo';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
@@ -276,15 +277,17 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <AppBar position="static">
         <Toolbar>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, cursor: 'pointer' }}
+          <Box
+            sx={{ 
+              flexGrow: 1, 
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center'
+            }}
             onClick={() => navigate('/')}
           >
-            <SportsSoccer sx={{ mr: 1, verticalAlign: 'middle' }} />
-            Turf Booking
-          </Typography>
+            <Logo variant="compact" size="medium" />
+          </Box>
 
           {isMobile ? (
             <>
@@ -396,7 +399,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       >
         <Container maxWidth="sm">
           <Typography variant="body2" color="text.secondary" align="center">
-            © 2024 Turf Booking. All rights reserved.
+            © 2024 KhelWell. Your Game. Your Journey. All in One Place.
           </Typography>
         </Container>
       </Box>

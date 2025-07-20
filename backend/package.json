@@ -1,7 +1,7 @@
 {
-  "name": "turf-booking-backend",
+  "name": "khelwell-backend",
   "version": "1.0.0",
-  "description": "Backend API for Turf Booking Website",
+  "description": "Backend API for KhelWell - Your Game. Your Journey. All in One Place",
   "main": "server.js",
   "scripts": {
     "start": "node server.prod.js",
@@ -11,12 +11,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "turf",
-    "booking",
+    "khelwell",
     "sports",
-    "sports"
+    "turf-booking",
+    "events",
+    "community"
   ],
-  "author": "creatimatix",
+  "author": "Creatimatix",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",

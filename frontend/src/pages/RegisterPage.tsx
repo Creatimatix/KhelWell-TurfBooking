@@ -19,6 +19,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useNavigate, Link as RouterLink } from 'react-router-dom';
+import Logo from '../components/Logo';
 import { useAuth } from '../context/AuthContext';
 import { RegisterData } from '../types';
 
@@ -73,11 +74,14 @@ const RegisterPage: React.FC = () => {
     <Container maxWidth="md" sx={{ mt: 8, mb: 4 }}>
       <Paper elevation={3} sx={{ p: 4 }}>
         <Box sx={{ textAlign: 'center', mb: 4 }}>
+          <Box sx={{ mb: 3 }}>
+            <Logo variant="default" size="medium" />
+          </Box>
           <Typography variant="h4" component="h1" gutterBottom>
-            Create Account
+            Join KhelWell
           </Typography>
           <Typography variant="body1" color="text.secondary">
-            Join us to start booking your favorite sports turfs
+            Your Game. Your Journey. All in One Place.
           </Typography>
         </Box>
 

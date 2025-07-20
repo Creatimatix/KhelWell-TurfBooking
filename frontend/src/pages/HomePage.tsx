@@ -15,6 +15,7 @@ import {
   BookOnline,
   LocationOn,
 } from '@mui/icons-material';
+import Logo from '../components/Logo';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
@@ -57,10 +58,10 @@ const HomePage: React.FC = () => {
         }}
       >
         <Container maxWidth="md">
-          <Typography variant="h2" component="h1" gutterBottom>
-            Book Your Perfect Turf
-          </Typography>
-          <Typography variant="h5" component="h2" gutterBottom>
+          <Box sx={{ mb: 4 }}>
+            <Logo variant="default" size="large" color="white" />
+          </Box>
+          <Typography variant="h6" component="h3" gutterBottom sx={{ opacity: 0.9 }}>
             Find and book sports turfs for football, cricket, tennis, and more
           </Typography>
           <Box sx={{ mt: 4 }}>
@@ -89,7 +90,7 @@ const HomePage: React.FC = () => {
       {/* Features Section */}
       <Container maxWidth="lg" sx={{ py: 8 }}>
         <Typography variant="h3" component="h2" textAlign="center" gutterBottom>
-          Why Choose Us?
+          Why Choose KhelWell?
         </Typography>
         <Grid container spacing={4} sx={{ mt: 4 }}>
           {features.map((feature, index) => (
@@ -134,7 +135,7 @@ const HomePage: React.FC = () => {
             Ready to Play?
           </Typography>
           <Typography variant="h6" color="text.secondary" paragraph>
-            Join thousands of sports enthusiasts who trust us for their turf bookings
+            Join thousands of sports enthusiasts who trust KhelWell for their turf bookings and events
           </Typography>
           <Button
             variant="contained"

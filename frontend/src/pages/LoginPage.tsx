@@ -14,6 +14,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useNavigate, Link as RouterLink } from 'react-router-dom';
+import Logo from '../components/Logo';
 import { useAuth } from '../context/AuthContext';
 
 const schema = yup.object({
@@ -50,11 +51,14 @@ const LoginPage: React.FC = () => {
     <Container maxWidth="sm" sx={{ mt: 8, mb: 4 }}>
       <Paper elevation={3} sx={{ p: 4 }}>
         <Box sx={{ textAlign: 'center', mb: 4 }}>
+          <Box sx={{ mb: 3 }}>
+            <Logo variant="default" size="medium" />
+          </Box>
           <Typography variant="h4" component="h1" gutterBottom>
             Welcome Back
           </Typography>
           <Typography variant="body1" color="text.secondary">
-            Sign in to your account to continue
+            Sign in to your KhelWell account to continue
           </Typography>
         </Box>
 

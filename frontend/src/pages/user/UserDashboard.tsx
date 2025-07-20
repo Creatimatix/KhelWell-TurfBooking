@@ -207,7 +207,7 @@ const UserDashboard: React.FC = () => {
           Welcome back, {user?.name}! 👋
         </Typography>
         <Typography variant="body1" color="text.secondary">
-          Discover nearby turfs, upcoming events, and manage your bookings
+          Your Game. Your Journey. All in One Place. Discover nearby turfs, upcoming events, and manage your bookings
         </Typography>
       </Box>
 
