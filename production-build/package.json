@@ -1,23 +1,12 @@
 {
-  "name": "turf-booking-backend",
+  "name": "khelwell-production",
   "version": "1.0.0",
-  "description": "Backend API for Turf Booking Website",
-  "main": "server.js",
+  "description": "KhelWell Production Build",
+  "main": "server.prod.js",
   "scripts": {
     "start": "node server.prod.js",
-    "dev": "nodemon server.js",
-    "prod": "NODE_ENV=production node server.prod.js",
-    "build": "npm install --production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "node setup-mysql.js"
   },
-  "keywords": [
-    "turf",
-    "booking",
-    "sports",
-    "sports"
-  ],
-  "author": "creatimatix",
-  "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "compression": "^1.7.4",
@@ -33,7 +22,8 @@
     "sequelize": "^6.37.7",
     "twilio": "^5.7.3"
   },
-  "devDependencies": {
-    "nodemon": "^3.0.2"
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
   }
 }
