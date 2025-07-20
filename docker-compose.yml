@@ -1,0 +1,72 @@
+version: '3.8'
+
+services:
+  # MySQL Database
+  mysql:
+    image: mysql:8.0
+    container_name: khelwell-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: turf_booking
+      MYSQL_USER: turf_user
+      MYSQL_PASSWORD: turf_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - khelwell-network
+
+  # Backend API
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: khelwell-backend
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_NAME=turf_booking
+      - DB_USER=turf_user
+      - DB_PASSWORD=turf_password
+      - JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
+      - JWT_EXPIRE=7d
+      - TWILIO_ACCOUNT_SID=your_account_sid_here
+      - TWILIO_AUTH_TOKEN=your_auth_token_here
+      - TWILIO_PHONE_NUMBER=+14155238886
+    ports:
+      - "5001:5001"
+    depends_on:
+      - mysql
+    networks:
+      - khelwell-network
+
+  # Frontend (Development)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    container_name: khelwell-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - REACT_APP_API_URL=http://localhost:5001/api
+    depends_on:
+      - backend
+    networks:
+      - khelwell-network
+
+volumes:
+  mysql_data:
+
+networks:
+  khelwell-network:
+    driver: bridge 
